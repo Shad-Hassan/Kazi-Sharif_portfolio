@@ -20,6 +20,7 @@ export default {
         'deep-blue':"#000435",
         'ghost-blue':"#30365D",
         'sat-blue':"#1E1E39",
+        'scarlet-red':"#FF2400",
       },
       
     

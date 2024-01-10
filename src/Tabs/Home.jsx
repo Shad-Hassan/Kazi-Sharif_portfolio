@@ -1,4 +1,5 @@
 import Intro from "../Components/HomeComponents/Intro";
+import Skills from "../Components/HomeComponents/Skills";
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
     return (
         <>
            <Intro stroke={moonStroke}></Intro>
+           <Skills stroke={moonStroke}></Skills>
         </>
     );
 };

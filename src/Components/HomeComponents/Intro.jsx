@@ -1,20 +1,50 @@
 import { Link } from 'react-router-dom';
-import { SocialIcon } from 'react-social-icons'
+import { SocialIcon } from 'react-social-icons';
+import { motion } from 'framer-motion';
+import { useInView } from "react-intersection-observer";
 const linkedIn = "https://www.linkedin.com/in/kazishaharairsharif/"
-const proPic = "/JuboIntro.png"
+const proPic = "/CaptainJubo.png"
+const javaDev = "/javaDev.png"
+
+
+
 const Intro = ({ stroke }) => {
     const linkedInProfile = () => {
-        window.open(linkedIn,"_blank")
+        window.open(linkedIn, "_blank")
     }
+
+    const [devRef, devInView] = useInView({
+        triggerOnce: false,
+        threshold: 0.2,
+    });
+
+    const [textRef, textInView] = useInView({
+        triggerOnce: false,
+        threshold: 0.2,
+    });
+
     return (
         <>
-            <div className='w-full h-[100svh] rounded-xl bg-deep-blue p-2 border border-white flex item-center justify-center flex-col lg:flex-row'>
+            <div className='w-full h-[100svh] rounded-xl flex item-center justify-center flex-col lg:flex-row'>
 
 
                 {/* Text Div */}
-                <div className="w-full h-full rounded-xl border border-red-500 p-3 flex items-center justify-center text-center font-montserratAlt">
+                <div className="w-full lg:w-1/2 h-1/2 lg:h-full 
+                rounded-xl p-3 flex items-start pt-[5svh] md:pt-[7.5svh] lg:pt-0 lg:items-center justify-center text-center font-montserratAlt">
 
-                    <div className="w-4/5 min-h-3/4 rounded-xl mt-5 lg:mt-0">
+                    <motion.div ref={textRef} className="w-3/4 h-1/2 rounded-xl"
+                        initial={{ y: -20, opacity: 0 }}
+                        animate={
+                            textInView ?
+                                {
+                                    y: [null, -20, 0, -10, 0],
+                                    opacity: [null, 0, 1, 0.8, 1],
+                                    transition: { duration: 1, ease: "easeInOut" },
+                                } :
+                                {}
+                        }>
+
+
                         <div className="mt-[3rem] lg:mt-[6rem]">
 
                             <h1 className="text-3xl md:text-3xl xl:text-5xl 2xl:9xl font-extrabold" style={stroke}>
@@ -26,46 +56,68 @@ const Intro = ({ stroke }) => {
                         <div className="mt-[1.5rem] lg:mt-[3rem] md:px-4 xl:px-6 2xl:px-12">
 
                             <p className="text-md md:text-lg xl:text-xl 2xl:text-3xl font-semibold text-moon-white text-justify">
-                                I am a passionate Java Developer. Dive into a symphony of Spring, Hibernate, Kafka, and more, sculpting robust backend solutions.
+                                I am a professional <span className='text-scarlet-red'>Java Developer</span>. I specialize in deploying robust backend solutions. My toolkit includes proficiency in Spring Boot, Microservices, Kafka and more.
                             </p>
                         </div>
 
 
                         <div className="h-[3rem] mt-[3rem] flex items-center justify-center">
 
-                           
-                                <div onClick={linkedInProfile} className='cursor-pointer w-3/4 md:w-1/2 xl:w-[40%] 2xl:w-1/3 py-[6px] px-2 lg:px-0 
+
+                            <div onClick={linkedInProfile} className='cursor-pointer w-3/4 md:w-1/2 xl:w-[40%] 2xl:w-1/3 py-[6px] px-2 lg:px-0 
                                 rounded-2xl flex items-center justify-center gap-5 border-2 border-moon-white hover:border-sky-500 bg-blue-800'>
 
 
 
-                                    
 
-                                        <SocialIcon url="https://www.linkedin.com" bgColor="#30365D" fgColor="#f6f6f3" style={{ height: "2rem", width: "2rem", borderRadius: "9999px", padding: "2px" }}></SocialIcon>
-                                    
 
-                                    
-                                        <h4 className='font-montserratAlt font-bold text-sm xl:text-md text-moon-white'>Connect With me</h4>
-                                    
+                                <SocialIcon url="https://www.linkedin.com" bgColor="#30365D" fgColor="#f6f6f3" style={{ height: "2rem", width: "2rem", borderRadius: "9999px", padding: "2px" }}></SocialIcon>
 
 
 
-                                </div>
-                            
+                                <h4 className='font-montserratAlt font-bold text-sm xl:text-md text-moon-white'>Connect With me</h4>
+
+
+
+
+                            </div>
+
 
                         </div>
 
 
-                    </div>
+                    </motion.div>
 
                 </div>
 
 
                 {/* Img Div */}
-                <div className="w-full h-full rounded-xl border border-yellow-500 flex items-center justify-center">
-                    <div className="w-4/5 min-h-3/4 rounded-xl mt-5 lg:mt-0 border-red-500">
-                        <img src={proPic} className='w-full h-full rounded-3xl border border-white bg-blue-800' alt="" />
+                <div className="h-1/2 lg:h-full rounded-xl flex items-center justify-center">
+
+                    <div className='w-3/4 md:w-1/2 lg:w-full relative'>
+                        <img src={proPic} className='w-full rounded-3xl' />
+
+                        <motion.div
+                            ref={devRef}
+                            initial={{ scale: 1 }}
+                            animate={
+                                devInView ?
+                                    {
+                                        scale: [1, 0.8, 1],
+                                        transition: { duration: 1.2, repeat: Infinity, repeatType: "reverse", repeatDelay: 0.1 },
+                                    }
+                                    : {}
+                            }
+                            className='w-1/3 h-auto rounded-3xl absolute -top-[12.5%] -right-[12.5%] md:-right-[25%] lg:-right-0 xl:-right-[25%]'
+                        >
+                            <img src={javaDev} className='ring-2 ring-scarlet-red rounded-3xl p-2' />
+
+                        </motion.div>
+
+
                     </div>
+
+
 
                 </div>
 

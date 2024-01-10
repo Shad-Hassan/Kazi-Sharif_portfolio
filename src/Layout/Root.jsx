@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import GlassEffect from "./GlassEffect";
 
 
 const Root = () => {
@@ -8,9 +9,15 @@ const Root = () => {
         <>
             <div className="w-full rounded-xl relative bg-deep-blue">
 
-                <div className="w-full rounded-xl absolute top-2">
+                <div className="w-full rounded-xl absolute top-2 z-30">
 
                     <Navbar></Navbar>
+
+                </div>
+
+                <div className="w-full lg:w-[95vw] px-[1rem] rounded-xl absolute top-2 z-10 opacity-50 blur-xl">
+
+                    <GlassEffect></GlassEffect>
 
                 </div>
 
