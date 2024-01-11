@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom';
 import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
+import Java3d from './Java3d';
 const linkedIn = "https://www.linkedin.com/in/kazishaharairsharif/"
 const proPic = "/CaptainJubo.png"
-const javaDev = "/javaDev.png"
+
 
 
 
@@ -13,10 +14,7 @@ const Intro = ({ stroke }) => {
         window.open(linkedIn, "_blank")
     }
 
-    const [devRef, devInView] = useInView({
-        triggerOnce: false,
-        threshold: 0.2,
-    });
+    
 
     const [textRef, textInView] = useInView({
         triggerOnce: false,
@@ -97,22 +95,7 @@ const Intro = ({ stroke }) => {
                     <div className='w-3/4 md:w-1/2 lg:w-full relative'>
                         <img src={proPic} className='w-full rounded-3xl' />
 
-                        <motion.div
-                            ref={devRef}
-                            initial={{ scale: 1 }}
-                            animate={
-                                devInView ?
-                                    {
-                                        scale: [1, 0.8, 1],
-                                        transition: { duration: 1.2, repeat: Infinity, repeatType: "reverse", repeatDelay: 0.1 },
-                                    }
-                                    : {}
-                            }
-                            className='w-1/3 h-auto rounded-3xl absolute -top-[12.5%] -right-[12.5%] md:-right-[25%] lg:-right-0 xl:-right-[25%]'
-                        >
-                            <img src={javaDev} className='ring-2 ring-scarlet-red rounded-3xl p-2' />
-
-                        </motion.div>
+                        <Java3d></Java3d>
 
 
                     </div>
