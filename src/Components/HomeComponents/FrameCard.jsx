@@ -1,4 +1,4 @@
-const javaDev = "/javaDev.png"
+
 import { useState } from "react";
 import { PiCursorBold } from "react-icons/pi";
 
@@ -33,8 +33,8 @@ const FrameCard = (props) => {
                         <h1 className="text-center text-sm md:text-md xl:text-lg mb-1 py-2">{skill_header}</h1>
                     </div>
 
-                    <div className="mt-1 h-[112px] md:h-[200px] w-full flex items-start justify-center">
-                        <img src={skill_img ? skill_img : javaDev} className="w-full 2xl:w-4/5 2xl:h-4/5 h-full object-cover md:object-fill p-2" />
+                    <div className="h-[80px] md:h-[160px] xl:h-[200px] w-full flex items-start justify-center">
+                        <img src={skill_img} className="w-full 2xl:w-4/5 2xl:h-4/5 h-full object-cover md:object-fill p-2" />
                     </div>
 
                     <div className="flex items-center justify-end pr-4 py-2 font-light text-xs gap-2">

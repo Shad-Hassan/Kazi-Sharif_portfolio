@@ -1,7 +1,7 @@
 import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
-import Java3d from './Java3d';
+const javaDev = "/javaDev.png"
 const linkedIn = "https://www.linkedin.com/in/kazishaharairsharif/"
 const proPic = "/CaptainJubo.png"
 
@@ -13,7 +13,10 @@ const Intro = ({ stroke }) => {
         window.open(linkedIn, "_blank")
     }
 
-    
+    const [devRef, devInView] = useInView({
+        triggerOnce: false,
+        threshold: 0.2,
+    });
 
     const [textRef, textInView] = useInView({
         triggerOnce: false,
@@ -22,12 +25,12 @@ const Intro = ({ stroke }) => {
 
     return (
         <>
-            <div className='w-full h-[100svh] rounded-xl flex item-center justify-center flex-col lg:flex-row'>
+            <div className='w-full h-[100svh] rounded-xl flex flex-col lg:flex-row'>
 
 
                 {/* Text Div */}
-                <div className="w-full lg:w-1/2 h-1/2 lg:h-full 
-                rounded-xl p-3 flex items-start pt-[5svh] md:pt-[7.5svh] lg:pt-0 lg:items-center justify-center text-center font-montserratAlt">
+                <div className="w-full lg:w-[50svw] h-[50svh] lg:h-[100svh] 
+                rounded-xl flex items-center lg:pt-0 lg:items-center justify-center text-center font-montserratAlt">
 
                     <motion.div ref={textRef} className="w-3/4 h-1/2 rounded-xl"
                         initial={{ y: -20, opacity: 0 }}
@@ -89,15 +92,37 @@ const Intro = ({ stroke }) => {
 
 
                 {/* Img Div */}
-                <div className="h-1/2 lg:h-full rounded-xl flex items-center justify-center">
+                <div className="w-full lg:w-[50svw] h-[50svh] lg:h-[100svh] 
+                rounded-xl flex items-center justify-center relative">
 
-                    <div className='w-3/4 md:w-1/2 lg:w-full relative '>
-                        <img src={proPic} className='w-full rounded-3xl overflow-hidden' />
+                    <div className='w-3/4 h-3/4 rounded-xl'>
 
-                        <Java3d></Java3d>
-
+                        <div className='w-full h-full flex items-center justify-center'>
+                            <img src={proPic} className='w-full md:w-3/4 lg:w-1/2 h-full lg:h-3/4 object-fit' />
+                        </div>
 
                     </div>
+
+                    <div className='w-full h-full absolute top-0 lg:top-[15svh]'>
+                        <div className='h-1/4 flex items-center justify-end'>
+                            <motion.div
+                            ref={devRef}
+                            initial={{ scale: 1 }}
+                            className='w-1/3'
+                            animate={
+                                devInView ?
+                                    {
+                                        scale: [1, 0.8, 1],
+                                        transition: { duration: 1.2, repeat: Infinity, repeatType: "reverse", repeatDelay: 0.1 },
+                                    }
+                                    : {}
+                            }>
+                                <img src={javaDev} className='w-4/5' />
+                            </motion.div>
+                        </div>
+                    </div>
+
+
 
 
 
