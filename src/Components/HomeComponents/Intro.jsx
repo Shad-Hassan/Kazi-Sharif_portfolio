@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
@@ -92,8 +91,8 @@ const Intro = ({ stroke }) => {
                 {/* Img Div */}
                 <div className="h-1/2 lg:h-full rounded-xl flex items-center justify-center">
 
-                    <div className='w-3/4 md:w-1/2 lg:w-full relative'>
-                        <img src={proPic} className='w-full rounded-3xl' />
+                    <div className='w-3/4 md:w-1/2 lg:w-full relative '>
+                        <img src={proPic} className='w-full rounded-3xl overflow-hidden' />
 
                         <Java3d></Java3d>
 

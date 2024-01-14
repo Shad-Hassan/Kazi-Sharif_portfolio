@@ -1,11 +1,13 @@
 import { useState } from "react";
 import FrameCard from "./FrameCard";
-
+import ModalCard from "./ModalCard";
+import { motion } from 'framer-motion';
+import { useInView } from "react-intersection-observer";
 const skillset = [
     {
         skill_id: 1,
         skill_header: "Front End Development",
-
+        skill_img: "/fronty.png",
         skills_items: [
             {
                 framework_id: 1,
@@ -68,7 +70,7 @@ const skillset = [
     {
         skill_id: 2,
         skill_header: "Back End Development",
-
+        skill_img: "/backy.png",
         skills_items: [
             {
                 framework_id: 15,
@@ -123,7 +125,7 @@ const skillset = [
     {
         skill_id: 3,
         skill_header: "Cloud Development",
-
+        skill_img: "/cloudy.png",
         skills_items: [
             {
                 framework_id: 24,
@@ -146,7 +148,7 @@ const skillset = [
     {
         skill_id: 4,
         skill_header: "Database / Big Data",
-
+        skill_img: "/oracleDB.png",
         skills_items: [
             {
                 framework_id: 28,
@@ -183,9 +185,9 @@ const skillset = [
         ]
     },
     {
-        skill_id: 4,
+        skill_id: 5,
         skill_header: "Testing and Build Tools",
-
+        skill_img: "/testing.png",
         skills_items: [
             {
                 framework_id: 36,
@@ -222,9 +224,9 @@ const skillset = [
         ]
     },
     {
-        skill_id: 5,
+        skill_id: 6,
         skill_header: "Logging & Monitoring",
-
+        skill_img: "/monitoring.png",
         skills_items: [
             {
                 framework_id: 44,
@@ -261,37 +263,86 @@ const skillset = [
         ]
     },
 ]
-    
+
 
 const SkillCard = () => {
-    const [select, setSelected] = useState(1)
+
+    const [modalRef, modalInView] = useInView({
+        triggerOnce: false,
+        threshold: 0.2,
+    });
+    const [skillCardRef, skillCardInView] = useInView({
+        triggerOnce: false,
+        threshold: 0.2,
+    });
+    const [modal, setModal] = useState(false)
+    const [object, setObject] = useState(null)
     return (
         <>
-            <div className="flex flex-col lg:flex-row w-full h-full">
+            <div className="flex items-center justify-center w-full h-full relative p-1">
 
-                <div className="lg:w-1/2 lg:h-full
-                w-full h-2/3">
 
-                    <div className="w-full h-full grid grid-cols-3 items-center justify-center gap-4">
+                {!modal &&
 
-                        {
+                    <motion.div className="w-full grid grid-cols-2 md:grid-cols-3 items-center justify-center gap-x-2 gap-y-8 2xl:gap-y-12 lg:gap-y-4 z-10" ref={skillCardRef}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={
+                        skillCardInView ?
+                            {
+                                opacity: 1,
+                                scale: 1,
+                                transition: { type: "spring", stiffness: 260, damping: 20, duration: 1, ease: "easeInOut" }
+                            }
+                            : {}
+                    }>
+
+{
                             skillset.map(skillset => <FrameCard
                                 key={skillset.skill_id}
                                 skillset={skillset}
-                                select={select}
-                                setSelected={setSelected}></FrameCard>)
+                                object={object}
+                                setObject={setObject}
+                                modal={modal}
+                                setModal={setModal}></FrameCard>)
                         }
 
-                    </div>
+                    </motion.div>
+                    
 
-                </div>
+                }
+                {modal &&
 
-                <div className="lg:w-1/2 lg:h-full
-                w-full h-1/3 border border-green-500">
+                    <motion.div ref={modalRef} className="absolute h-full w-full rounded-xl"
+                        initial={{ x: -20, opacity: 0 }}
+                        animate={
+                            modalInView ?
+                                {
+                                    x: [null, -20, 0, -10, 0],
+                                    opacity: [null, 0, 1, 0.8, 1],
+                                    transition: { duration: 0.75, ease: "easeInOut" },
+                                } :
+                                {}
+                        }>
+                        {
+                            skillset.map(skillset => <ModalCard
+                                key={skillset.skill_id}
+                                skillset={skillset}
+                                object={object}
+                                setObject={setObject}
+                                modal={modal}
+                                setModal={setModal}></ModalCard>)
+                        }
 
-                </div>
+                    </motion.div>
+
+
+                }
 
             </div>
+
+
+
+
         </>
     );
 };

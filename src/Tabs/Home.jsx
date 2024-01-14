@@ -1,5 +1,7 @@
 import Intro from "../Components/HomeComponents/Intro";
 import Skills from "../Components/HomeComponents/Skills";
+import WorkXp from "../Components/HomeComponents/WorkXp";
+
 
 
 const Home = () => {
@@ -12,6 +14,7 @@ const Home = () => {
         <>
            <Intro stroke={moonStroke}></Intro>
            <Skills stroke={moonStroke}></Skills>
+           <WorkXp stroke={moonStroke}></WorkXp>
         </>
     );
 };
