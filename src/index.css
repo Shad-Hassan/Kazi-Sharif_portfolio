@@ -17,7 +17,7 @@
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #888 #f6f6f3;
+    scrollbar-color: #f6f6f3 #f6f6f3;
   }
   
   *::-webkit-scrollbar-thumb {

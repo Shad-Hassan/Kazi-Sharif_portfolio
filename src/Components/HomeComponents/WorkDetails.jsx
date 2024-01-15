@@ -47,7 +47,7 @@ const WorkDetails = (props) => {
                 </div>
 
 
-                <div className="mt-[2rem] px-3 border border-moon-white rounded-xl grid grid-cols-1 gap-2 bg-evilBlue">
+                <div className="w-full mt-[2rem] px-3 border border-moon-white rounded-xl grid grid-cols-1 gap-2 bg-evilBlue">
                     {
                         currentWork.map(work => <Responsibilities
                             key={done_id}
