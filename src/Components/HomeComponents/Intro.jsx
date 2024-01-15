@@ -32,7 +32,7 @@ const Intro = ({ stroke }) => {
                 <div className="w-full lg:w-[50svw] h-[50svh] lg:h-[100svh] 
                 rounded-xl flex items-center lg:pt-0 lg:items-center justify-center text-center font-montserratAlt">
 
-                    <motion.div ref={textRef} className="w-3/4 h-1/2 rounded-xl"
+                    <motion.div ref={textRef} className="w-3/4 rounded-xl"
                         initial={{ y: -20, opacity: 0 }}
                         animate={
                             textInView ?
@@ -45,7 +45,7 @@ const Intro = ({ stroke }) => {
                         }>
 
 
-                        <div className="mt-[3rem] lg:mt-[6rem]">
+                        <div className="mt-[15svh] sm:mt-0">
 
                             <h1 className="text-3xl md:text-3xl xl:text-5xl 2xl:9xl font-extrabold" style={stroke}>
                                 Kazi Jubayer Sharif
@@ -75,7 +75,7 @@ const Intro = ({ stroke }) => {
 
 
 
-                                <h4 className='font-montserratAlt font-bold text-sm xl:text-md text-moon-white'>Connect With me</h4>
+                                <h4 className='font-montserratAlt font-bold text-xs text-moon-white'>Connect With me</h4>
 
 
 
@@ -95,10 +95,10 @@ const Intro = ({ stroke }) => {
                 <div className="w-full lg:w-[50svw] h-[50svh] lg:h-[100svh] 
                 rounded-xl flex items-center justify-center relative">
 
-                    <div className='w-3/4 h-3/4 rounded-xl'>
+                    <div className='w-3/4 rounded-xl'>
 
-                        <div className='w-full h-full flex items-center justify-center'>
-                            <img src={proPic} className='w-full md:w-3/4 lg:w-1/2 h-full lg:h-3/4 object-fit' />
+                        <div className='flex items-center justify-center'>
+                            <img src={proPic} className='w-3/5 md:w-1/2 lg:w-3/4 h-3/5 md:h-1/2 object-fill' />
                         </div>
 
                     </div>
@@ -117,7 +117,7 @@ const Intro = ({ stroke }) => {
                                     }
                                     : {}
                             }>
-                                <img src={javaDev} className='w-4/5' />
+                                <img src={javaDev} className='w-3/5 md:w-2/5 lg:w-3/5 2xl:w-2/5 ring-2 ring-scarlet-red rounded-xl p-2' />
                             </motion.div>
                         </div>
                     </div>

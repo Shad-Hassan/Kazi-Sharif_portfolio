@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from 'framer-motion';
 import JobCard from "./JobCard";
-
+import WorkDetails from "./WorkDetails";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 const WorkXp = ({ stroke }) => {
     const [workRef, workRefInView] = useInView({
@@ -13,7 +14,7 @@ const WorkXp = ({ stroke }) => {
         {
             job_Id: 1,
             company: "Citibank & Citigroup, INC ",
-            logo:"/citi.png",
+            logo: "/citi.png",
             post: "Software Engineer",
             city: "Irving,TX",
             session: "March 2022 - Present",
@@ -78,7 +79,7 @@ const WorkXp = ({ stroke }) => {
         },
         {
             company: "Pattons Labs, INC ",
-            logo:"/pattons.png",
+            logo: "/pattons.png",
             post: "Software Developer",
             city: "Jacksonville, FL",
             session: "October 2022 - March 2022",
@@ -111,7 +112,7 @@ const WorkXp = ({ stroke }) => {
         },
         {
             company: "Oklahoma State University",
-            logo:"/osu.png",
+            logo: "/osu.png",
             post: "Junior Web Developer",
             city: "Stillwater , OK",
             session: "January 2019 - October 2021",
@@ -131,24 +132,32 @@ const WorkXp = ({ stroke }) => {
             ],
         },
     ]
+    const closeDetails = async () => {
+        if (details) {
+            console.log("modal dekhao")
+            setDetails(false)
+            setJobObject(null)
+        }
+    }
+
     const [details, setDetails] = useState(false)
     const [jobObject, setJobObject] = useState(null)
     return (
         <>
-            <div className="w-full h-[100svh] rounded-xl bg-deep-blue border border-white font-montserratAlt">
+            <div className="w-full h-[100svh] rounded-xl bg-deep-blue border border-white font-montserratAlt overflow-y-scroll">
 
 
                 {/* Xp Header */}
-                <div className="h-[6rem] md: lg:h-[9rem] xl:h-[12rem] 2xl:h-[15rem] 
+                <div className="h-[9rem] md: lg:h-[12rem] xl:h-[15rem] 2xl:h-[18rem] 
                 flex flex-col gap-4 items-center justify-center pt-2">
-                    <h1 className="text-3xl md:text-3xl xl:text-5xl 2xl:9xl font-extrabold mt-1" style={stroke}>
+                    <h1 className="text-3xl md:text-3xl xl:text-5xl 2xl:9xl font-extrabold mt-[1.5rem]" style={stroke}>
                         Experience
                     </h1>
-                    <p className="text-sm md:text-lg xl:text-xl font-semibold text-moon-white text-center px-2">My depth industrial experience has made me proficient with software development.Click for more details </p>
+                    <p className="text-sm md:text-lg xl:text-xl font-semibold text-moon-white text-center px-2">5+ years of industrial experience has made me proficient with software development.</p>
                 </div>
 
 
-                <div className="mt-[3svh]">
+                <div className="mt-[2svh]">
                     {!details &&
 
                         <motion.div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center gap-x-2 gap-y-8 2xl:gap-y-12 lg:gap-y-4 z-10"
@@ -175,6 +184,60 @@ const WorkXp = ({ stroke }) => {
                             }
 
                         </motion.div>
+
+
+                    }
+                    {details &&
+
+
+
+                        <div className="relative">
+
+                            <div className="w-full px-2">
+
+
+                                <div className="w-full h-[3rem] flex justify-end">
+                                    <div className="rounded-full flex justify-end items-center gap-4
+                                    pt-3 pr-3 md:pt-[3svh] md:pr-[4svh] xl:pt-[4svh] xl:pr-[6svh]">
+                                        <div className="flex items-center justify-center text-sm text-moon-white tracking-widest">
+                                            <h3>Close</h3>
+                                        </div>
+
+                                        <div onClick={closeDetails}>
+                                            <IoCloseCircleOutline className="shadow-xl text-6xl font-extrabold text-scarlet-red brightness-125 cursor-pointer rounded-full"></IoCloseCircleOutline>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <motion.div ref={workRef} className="h-full w-full rounded-xl"
+                                initial={{ x: -20, opacity: 0 }}
+                                animate={
+                                    workRefInView ?
+                                        {
+                                            x: [null, 20, 0, 10, 0],
+                                            opacity: [null, 0, 1, 0.8, 1],
+                                            transition: { duration: 0.65, ease: "easeInOut" },
+                                        } :
+                                        {}
+                                }>
+                                <WorkDetails
+                                jobObject={jobObject}
+                                setJobObject={setJobObject}
+                                details={details}
+                                setDetails={setDetails}                                
+                                ></WorkDetails>
+                                
+
+                            </motion.div>
+
+                        </div>
 
 
                     }

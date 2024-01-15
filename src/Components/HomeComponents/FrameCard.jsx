@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { PiCursorBold } from "react-icons/pi";
-
+import { motion } from 'framer-motion';
 
 const FrameCard = (props) => {
     const { object, setObject, modal, setModal, skillset } = props
@@ -34,13 +34,17 @@ const FrameCard = (props) => {
                     </div>
 
                     <div className="h-[80px] md:h-[160px] xl:h-[200px] w-full flex items-start justify-center">
-                        <img src={skill_img} className="w-full 2xl:w-4/5 2xl:h-4/5 h-full object-cover md:object-fill p-2" />
+                        <img src={skill_img} className="w-full 2xl:w-4/5 2xl:h-4/5 h-full object-cover md:object-fill p-2 opacity-85" />
                     </div>
 
                     <div className="flex items-center justify-end pr-4 py-2 font-light text-xs gap-2">
-                        <div className="text-xs md:text-sm text-scarlet-red">
+                        <motion.div
+                            className="text-xs md:text-sm text-scarlet-red"
+                            initial={{ opacity: 1 }}
+                            animate={{ opacity: [1, 0, 1], transition: { duration: 1.5, repeat: Infinity } }}>
                             <PiCursorBold></PiCursorBold>
-                        </div>
+                        </motion.div>
+                        
                         <div>
                             <h2 className="text-xs md:text-sm">Details</h2>
                         </div>

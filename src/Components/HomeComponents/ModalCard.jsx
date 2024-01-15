@@ -12,13 +12,12 @@ const ModalCard = (props) => {
     useEffect(() => {
 
         if (object) {
-            setModal(object)
             setLoading(false)
 
         }
 
 
-    }, [object, setModal])
+    },)
 
     const closeModal = async () => {
         if (modal) {
