@@ -144,7 +144,7 @@ const WorkXp = ({ stroke }) => {
     const [jobObject, setJobObject] = useState(null)
     return (
         <>
-            <div className="w-full h-[100svh] rounded-xl bg-deep-blue border border-white font-montserratAlt">
+            <div className="w-full h-[100svh] rounded-xl bg-deep-blue font-montserratAlt">
 
 
                 {/* Xp Header */}

@@ -10,14 +10,14 @@ const Pagination = ({ currentPage, setCurrentPage, workPerPage, totalWork  }) =>
         <>
             {
                 pages.map(number =>(
-                    <button key={number} onClick={()=>{setCurrentPage(number)}} className={`h-[3rem] w-[3rem] cursor-pointer rounded-full my-3 
+                    <button key={number} onClick={()=>{setCurrentPage(number)}} className={`h-[1rem] w-[1rem] sm:h-[3rem] sm:w-[3rem] cursor-pointer rounded-full my-3 
                     ${
                         currentPage === number ? 'bg-blue-300' : 'bg-evilBlue'
                       }
                       ${
                         currentPage === number ? 'text-russia-black' : 'text-moon-white'
                       }`}>
-                        {number}
+                        <h3 className="text-xs sm:text-sm md:text-md">{number}</h3>
                     </button>
                 ))
             }
