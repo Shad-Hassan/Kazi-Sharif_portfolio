@@ -1,5 +1,5 @@
 
-
+import { IoIosMenu } from "react-icons/io";
 const Navbar = () => {
     return (
         <>
@@ -11,7 +11,7 @@ const Navbar = () => {
                 </div>
                 
                 <div className="w-3/4 flex justify-end items-center">
-                    <a className="btn">Button</a>
+                    <a className="text-moon-white"><IoIosMenu/></a>
                 </div>
             </div>
         </>

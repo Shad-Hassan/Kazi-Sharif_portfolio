@@ -32,11 +32,11 @@ const ModalCard = (props) => {
         <>
             <div className="w-full h-full absolute top-0 rounded-xl z-30">
                 <div className="rounded-full flex justify-end items-center gap-4 
-                pt-3 pr-3 md:pt-[3svh] md:pr-[4svh] xl:pt-[4svh] xl:pr-[6svh]">
+                pr-3 md:pr-[4svh] 2xl:pr-[6svh]">
                     <div className="flex items-center justify-center text-sm text-moon-white tracking-widest">
                         <h3>Close</h3>
                     </div>
-                    <IoCloseCircleOutline onClick={closeModal} className="shadow-xl text-6xl font-extrabold text-scarlet-red brightness-125 cursor-pointer rounded-full"></IoCloseCircleOutline>
+                    <IoCloseCircleOutline onClick={closeModal} className="shadow-xl text-3xl md:text-4xl 2xl:text-6xl font-extrabold text-scarlet-red brightness-125 cursor-pointer rounded-full"></IoCloseCircleOutline>
 
                 </div>
 
@@ -51,16 +51,16 @@ const ModalCard = (props) => {
                 </div>
 
                 <div className="w-full my-[1.5rem]">
-                    <h1 className="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl italic text-center text-scarlet-red">{object.skill_header}</h1>
+                    <h1 className="text-lg sm:text-xl md:text-2xl xl:text-3xl 2xl:text-4xl italic text-center text-lime-400">{object.skill_header}</h1>
                 </div>
                 <div className="rounded-xl grid grid-cols-2 xl:grid-cols-3 items-center justify-center">
                     {
                         skills_items.map(({ framework_id, framework }) => (
                             <div key={framework_id} className="flex items-center justify-center gap-3">
-                                <div className="w-3/4 ring ring-scarlet-red rounded-xl shadow-lg
-                                px-2 py-1 xl:px-4 xl:py-2 
-                                my-[2svh] xl:my-[3.2svh]">
-                                    <h2 className="font-montserratAlt text-moon-white text-center">{framework}</h2>
+                                <div className="w-3/4 ring ring-orange-400 rounded-xl shadow-lg
+                                px-2 py-1 2xl:px-4 2xl:py-2 
+                                my-[1svh] 2xl:my-[2svh]">
+                                    <h2 className="font-montserratAlt text-xs md:text-sm 2xl:text-lg text-moon-white text-center">{framework}</h2>
                                 </div>
 
                             </div>

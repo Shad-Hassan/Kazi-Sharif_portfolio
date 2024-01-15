@@ -47,21 +47,21 @@ const Intro = ({ stroke }) => {
 
                         <div className="mt-[15svh] sm:mt-0">
 
-                            <h1 className="text-3xl md:text-3xl xl:text-5xl 2xl:9xl font-extrabold" style={stroke}>
+                            <h1 className="text-2xl sm:text-3xl md:text-3xl xl:text-5xl 2xl:9xl font-extrabold" style={stroke}>
                                 Kazi Jubayer Sharif
                             </h1>
 
                         </div>
 
-                        <div className="mt-[1.5rem] lg:mt-[3rem] md:px-4 xl:px-6 2xl:px-12">
+                        <div className="mt-[1em] lg:mt-[2em] md:px-4 xl:px-6 2xl:px-12">
 
-                            <p className="text-md md:text-lg xl:text-xl 2xl:text-3xl font-semibold text-moon-white text-justify">
+                            <p className="text-sm sm:text-md md:text-lg xl:text-xl 2xl:text-3xl font-semibold text-moon-white text-justify">
                                 I am a professional <span className='text-scarlet-red'>Java Developer</span>. I specialize in deploying robust backend solutions. My toolkit includes proficiency in Spring Boot, Microservices, Kafka and more.
                             </p>
                         </div>
 
 
-                        <div className="h-[3rem] mt-[3rem] flex items-center justify-center">
+                        <div className="h-[2rem] mt-[2rem] flex items-center justify-center">
 
 
                             <div onClick={linkedInProfile} className='cursor-pointer w-3/4 md:w-1/2 xl:w-[40%] 2xl:w-1/3 py-[6px] px-2 lg:px-0 
@@ -75,7 +75,7 @@ const Intro = ({ stroke }) => {
 
 
 
-                                <h4 className='font-montserratAlt font-bold text-xs text-moon-white'>Connect With me</h4>
+                                <h4 className='font-montserratAlt font-bold text-[0.55rem] tracing-[12px] sm:text-xs text-moon-white'>Connect With me</h4>
 
 
 
@@ -103,7 +103,7 @@ const Intro = ({ stroke }) => {
 
                     </div>
 
-                    <div className='w-full h-full absolute top-0 lg:top-[15svh]'>
+                    <div className='w-full h-full absolute top-[40px] sm:top-0 lg:top-[15svh]'>
                         <div className='h-1/4 flex items-center justify-end'>
                             <motion.div
                             ref={devRef}
@@ -117,7 +117,7 @@ const Intro = ({ stroke }) => {
                                     }
                                     : {}
                             }>
-                                <img src={javaDev} className='w-3/5 md:w-2/5 lg:w-3/5 2xl:w-2/5 ring-2 ring-scarlet-red rounded-xl p-2' />
+                                <img src={javaDev} className='w-3/5 md:w-2/5 lg:w-3/5 2xl:w-2/5 ring-2 ring-lime-400 rounded-xl p-2' />
                             </motion.div>
                         </div>
                     </div>

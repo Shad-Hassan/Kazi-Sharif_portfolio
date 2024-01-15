@@ -24,17 +24,17 @@ const JobCard = (props) => {
 
 
 
-                    <div className="w-full flex items-center justify-center p-1">
-                        <h1 className="text-center text-md md:text-lg xl:text-xl mb-1 py-2 font-extrabold">{company}</h1>
+                    <div className="w-full flex items-center justify-center sm:p-1">
+                        <h1 className="text-center text-sm sm:text-md md:text-lg xl:text-xl mb-1 py-2 font-extrabold">{company}</h1>
                     </div>
 
 
-                    <div className="h-[72px] md:h-[160px] xl:h-[200px] w-full flex items-start justify-center">
+                    <div className="h-[52px] sm:h-[72px] md:h-[160px] xl:h-[200px] w-full flex items-start justify-center">
                         <img src={logo} className="w-full 2xl:w-4/5 2xl:h-4/5 h-full object-contain md:object-fill p-2" />
                     </div>
 
 
-                    <div className="flex gap-2 justify-center">
+                    <div className="flex gap-2 justify-center text-sm">
                         <div className="flex justify-center items-center">
                             <MdAccessTime />
                         </div>
@@ -44,7 +44,7 @@ const JobCard = (props) => {
                     </div>
 
                     <div className="flex items-center justify-center">
-                        <h1 className="text-center text-md md:text-lg xl:text-xl mb-1 py-2 font-extrabold text-scarlet-red">{post}</h1>
+                        <h1 className="text-center text-sm sm:text-md md:text-lg xl:text-xl mb-1 py-2 font-extrabold text-lime-400">{post}</h1>
                     </div>
 
 

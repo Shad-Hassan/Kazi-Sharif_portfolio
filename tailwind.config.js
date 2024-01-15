@@ -21,6 +21,7 @@ export default {
         'ghost-blue':"#30365D",
         'sat-blue':"#1E1E39",
         'scarlet-red':"#FF2400",
+        'evilBlue':"#001B3A",
       },
       
     

@@ -30,10 +30,10 @@ const FrameCard = (props) => {
 
 
                     <div className="w-full flex items-center justify-center p-1">
-                        <h1 className="text-center text-sm md:text-md xl:text-lg mb-1 py-2">{skill_header}</h1>
+                        <h1 className="text-lime-400 text-center text-sm md:text-md xl:text-lg mb-1 py-2">{skill_header}</h1>
                     </div>
 
-                    <div className="h-[80px] md:h-[160px] xl:h-[200px] w-full flex items-start justify-center">
+                    <div className="h-[64px] sm:h-[72px] md:h-[104px] 2xl:h-[200px] w-full flex items-start justify-center">
                         <img src={skill_img} className="w-full 2xl:w-4/5 2xl:h-4/5 h-full object-cover md:object-fill p-2 opacity-85" />
                     </div>
 

@@ -144,23 +144,24 @@ const WorkXp = ({ stroke }) => {
     const [jobObject, setJobObject] = useState(null)
     return (
         <>
-            <div className="w-full h-[100svh] rounded-xl bg-deep-blue border border-white font-montserratAlt overflow-y-scroll">
+            <div className="w-full h-[100svh] rounded-xl bg-deep-blue border border-white font-montserratAlt">
 
 
                 {/* Xp Header */}
-                <div className="h-[9rem] md: lg:h-[12rem] xl:h-[15rem] 2xl:h-[18rem] 
-                flex flex-col gap-4 items-center justify-center pt-2">
-                    <h1 className="text-3xl md:text-3xl xl:text-5xl 2xl:9xl font-extrabold mt-[1.5rem]" style={stroke}>
+                <div className="h-[8rem] sm:h-[10rem] md: lg:h-[12rem] xl:h-[15rem] 2xl:h-[18rem] 
+                flex flex-col gap-2 sm:gap-4 items-center justify-center pt-2
+                ">
+                    <h1 className="text-2xl sm:text-3xl md:text-3xl xl:text-5xl 2xl:9xl font-extrabold mt-[0.5rem] sm:mt-[0.75rem] md:mt-[1.5rem]" style={stroke}>
                         Experience
                     </h1>
-                    <p className="text-sm md:text-lg xl:text-xl font-semibold text-moon-white text-center px-2">5+ years of industrial experience has made me proficient with software development.</p>
+                    <p className="text-xs sm:text-sm md:text-lg xl:text-xl font-semibold text-moon-white text-center px-2">5+ years of industrial experience has made me proficient with software development.</p>
                 </div>
 
 
-                <div className="mt-[2svh]">
+                <div className="mt-[4px] sm:mt-[3svh]">
                     {!details &&
 
-                        <motion.div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center gap-x-2 gap-y-8 2xl:gap-y-12 lg:gap-y-4 z-10"
+                        <motion.div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center gap-x-2 md:gap-x-4 2xl:gap-y-12 gap-y-4 z-10"
                             ref={workRef}
                             initial={{ opacity: 0, scale: 0.5 }}
                             animate={
@@ -193,24 +194,12 @@ const WorkXp = ({ stroke }) => {
 
                         <div className="relative">
 
-                            <div className="w-full px-2">
-
-
-                                <div className="w-full h-[3rem] flex justify-end">
-                                    <div className="rounded-full flex justify-end items-center gap-4
-                                    pt-3 pr-3 md:pt-[3svh] md:pr-[4svh] xl:pt-[4svh] xl:pr-[6svh]">
-                                        <div className="flex items-center justify-center text-sm text-moon-white tracking-widest">
-                                            <h3>Close</h3>
-                                        </div>
-
-                                        <div onClick={closeDetails}>
-                                            <IoCloseCircleOutline className="shadow-xl text-6xl font-extrabold text-scarlet-red brightness-125 cursor-pointer rounded-full"></IoCloseCircleOutline>
-                                        </div>
-
-                                    </div>
-
+                            <div className="rounded-full flex justify-end items-center gap-4 
+                            pr-3 md:pr-[4svh] 2xl:pr-[6svh] py-[4px]">
+                                <div className="flex items-center justify-center text-sm text-moon-white tracking-widest">
+                                    <h3>Close</h3>
                                 </div>
-
+                                <IoCloseCircleOutline onClick={closeDetails} className="shadow-xl text-3xl md:text-4xl 2xl:text-6xl font-extrabold text-scarlet-red brightness-125 cursor-pointer rounded-full"></IoCloseCircleOutline>
 
                             </div>
 
@@ -228,12 +217,12 @@ const WorkXp = ({ stroke }) => {
                                         {}
                                 }>
                                 <WorkDetails
-                                jobObject={jobObject}
-                                setJobObject={setJobObject}
-                                details={details}
-                                setDetails={setDetails}                                
+                                    jobObject={jobObject}
+                                    setJobObject={setJobObject}
+                                    details={details}
+                                    setDetails={setDetails}
                                 ></WorkDetails>
-                                
+
 
                             </motion.div>
 

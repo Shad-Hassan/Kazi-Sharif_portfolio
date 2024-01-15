@@ -279,7 +279,7 @@ const SkillCard = () => {
     const [object, setObject] = useState(null)
     return (
         <>
-            <div className="flex items-center justify-center w-full h-full relative p-1">
+            <div className="flex items-center justify-center w-full h-full relative p-1 mt-[0.75svh] sm:mt-[2svh]">
 
 
                 {!modal &&
