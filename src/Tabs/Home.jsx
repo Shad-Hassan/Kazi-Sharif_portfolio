@@ -2,6 +2,7 @@ import ContactMe from "../Components/HomeComponents/ContactMe";
 import Intro from "../Components/HomeComponents/Intro";
 import Skills from "../Components/HomeComponents/Skills";
 import WorkXp from "../Components/HomeComponents/WorkXp";
+import { Link as ScrollLink} from "react-scroll";
 
 
 
@@ -14,9 +15,9 @@ const Home = () => {
     return (
         <>
            <Intro stroke={moonStroke}></Intro>
-           <Skills stroke={moonStroke}></Skills>
-           <WorkXp stroke={moonStroke}></WorkXp>
-           <ContactMe stroke={moonStroke}></ContactMe>
+           <ScrollLink to="Skills"><Skills stroke={moonStroke}></Skills></ScrollLink>
+           <ScrollLink to="Experience"><WorkXp stroke={moonStroke}></WorkXp></ScrollLink>
+           <ScrollLink><ContactMe stroke={moonStroke}></ContactMe></ScrollLink>
         </>
     );
 };

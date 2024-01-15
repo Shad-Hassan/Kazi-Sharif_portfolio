@@ -7,7 +7,7 @@ const Footer = () => {
     }
     return (
         <>
-            <footer className="w-full h-[10rem] p-10 bg-russia-black text-moon-white">
+            <footer className="mt-[1rems] w-full h-[10rem] p-10 bg-russia-black text-moon-white">
                 <div className="flex flex-col gap-3 items-center justify-center">
 
                     <h3 className="font-montserratAlt">Copyright © 2024 - All right reserved</h3>

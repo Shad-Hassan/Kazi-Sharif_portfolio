@@ -2,9 +2,10 @@ import { MdOutlineMail } from "react-icons/md";
 import { PiWebhooksLogoThin } from "react-icons/pi";
 import { motion } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
-import MailForm from "./MailForm";
 const linkedIn = "https://www.linkedin.com/in/kazishaharairsharif/"
 const Jubair = "/Jubair.PNG"
+
+
 const ContactMe = ({ stroke }) => {
     const linkedInProfile = () => {
         window.open(linkedIn, "_blank")
@@ -27,10 +28,11 @@ const ContactMe = ({ stroke }) => {
                         }
                         : {}
                 }>
+                
                 <div className="flex-none">
                     {/* Contact Header */}
                     <div className="h-[8rem] sm:h-[10rem] md: lg:h-[12rem] xl:h-[15rem] 2xl:h-[18rem] 
-                flex flex-col gap-2 sm:gap-4 items-center justify-center pt-2
+                flex flex-col gap-2 sm:gap-4 items-center justify-end pt-2
                 ">
                         <h1 className="text-2xl sm:text-3xl md:text-3xl xl:text-5xl 2xl:9xl font-extrabold mt-[0.5rem] sm:mt-[0.75rem] md:mt-[1.5rem]" style={stroke}>
                             Contact Me

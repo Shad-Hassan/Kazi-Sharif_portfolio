@@ -4,7 +4,7 @@ import SkillCard from "./SkillCard";
 const Skills = ({ stroke }) => {
     return (
         <>
-            <div className="w-full min-h-[100svh] rounded-xl bg-deep-blue p-2 flex flex-col">
+            <div id="Skills" className="w-full min-h-[100svh] rounded-xl bg-deep-blue p-2 flex flex-col">
 
 
                 <div className="flex-none h-[4rem] sm:h-[6rem] md: lg:h-[9rem] xl:h-[12rem] 2xl:h-[15rem] 
@@ -19,6 +19,8 @@ const Skills = ({ stroke }) => {
                 <div className="flex-1 mt-0 md:mt-[2svh]">
                    <SkillCard></SkillCard>
                 </div>
+
+                
 
             </div>
         </>
