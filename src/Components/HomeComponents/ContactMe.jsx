@@ -63,7 +63,7 @@ const ContactMe = ({ stroke }) => {
                 rounded-xl flex items-center justify-center text-justify font-montserratAlt">
 
                         <h2 className="text-sm md:text-lg lg:text-xl text-pretty">
-                            I earned my Bachelor of Science in Computer Science and Information Systems from <span className="text-[#FFA500]">Oklahoma State University</span>, graduating in July 2021. From August 2017 to July 2021.
+                            I earned my Bachelor of Science in Computer Science and Information Systems from <span className="text-[#FFA500]">Oklahoma State University</span>, graduating in July 2021.
                             <br /><br />Passionate about software development, I stay updated with emerging technologies.I actively contribute to ongoing research on Micro Services and Machine Learning.
                         </h2>
 
