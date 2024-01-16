@@ -87,7 +87,7 @@ const Navbar = () => {
                     </ul>
                     {/* mobile device */}
                     <div className="sm:hidden block relative" ref={mobileMenuRef}>
-                        {!mobileMenu ? <GiHamburgerMenu className="text-xl" onClick={handleBurgerMenu} ref={burgerMenuRef} /> : <IoCloseCircleOutline className="text-2xl" onClick={handleCross} />}
+                        {!mobileMenu ? <GiHamburgerMenu className="text-xl text-moon-white brightness-150" onClick={handleBurgerMenu} ref={burgerMenuRef} /> : <IoCloseCircleOutline className="text-2xl text-moon-white brightness-150" onClick={handleCross} />}
                         <div className="absolute top-[40px] right-0 w-[120px] rounded-2xl">
 
                             {mobileMenu &&
